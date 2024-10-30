@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+          background-color: #87ceeb;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: #1E90FF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            z-index: 2;
+        }
+
+        .slideshow-container {
+            max-width: 800px;
+            position: relative;
+            margin: 20px auto;
+            overflow: hidden;
+            background: linear-gradient(to right, #6790b8, #87ceeb);
+            padding: 2rem;
+        }
+
+        .slide {
+            display: none;
+            text-align: center;
+        }
+
+        .slide.active {
+            display: block;
+            animation: fade 0.5s ease-in-out;
+        }
+
+        .slide img {
+            max-width: 800px;
+            max-height: 400px;
+            object-fit: contain;
+        }
+
+        .slide-caption {
+            color: white;
+            font-size: 1.2rem;
+            margin-top: 1rem;
+            text-align: center;
+        }
+
+        @keyframes fade {
+            from {opacity: 0.4}
+            to {opacity: 1}
+        }
+
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            background-color: rgba(30, 144, 255, 0.8);
+            border: none;
+            z-index: 1;
+        }
+
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .prev:hover, .next:hover {
+            background-color: rgba(30, 144, 255, 0.9);
+        }
+
+        .dots-container {
+            text-align: center;
+            padding: 10px;
+            max-width: 100%;
+            overflow-x: auto;
+            white-space: nowrap;
+            margin-top: 10px;
+        }
+
+        .dot {
+            cursor: pointer;
+            height: 12px;
+            width: 12px;
+            margin: 0 4px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .dot.active, .dot:hover {
+            background-color: #1E90FF;
+        }
+
+        .slide-counter {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: rgba(30, 144, 255, 0.7);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 14px;
+            z-index: 1;
+        }
+
+        .controls {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .pause-btn {
+            background-color: #1E90FF;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 0 5px;
+        }
+
+        .pause-btn:hover {
+            background-color: #1473c2;
+        }
+    </style>
+</head>
+<body>
+  <button class="back-button" onclick="location.href='index.html'">Back</button>
+
+    <div class="slideshow-container">
+        <div class="slide-counter">1 / 13</div>
+        
+        <!-- 15 Slides -->
+        <div class="slide active">
+            <img src="./images/S1.jpeg" alt="Slide 1">
+            <div class="slide-caption">Interaction between fellow students fosters collaboration, support, and shared learning experiences.</div>
+        </div>
+        <div class="slide">
+            <img src="./images/S14.jpeg" alt="Slide 2">
+            <div class="slide-caption">Celebrating Extracuricular Excellence at the Tuition Achievement Gala</div>
+        </div>
+        <div class="slide">
+            <img src="./images/S4.jpeg" alt="Slide 3">
+            <div class="slide-caption">Rewarding our Top Tuition Students with an Unforgettable Trip</div>
+        </div>
+        <div class="slide">
+            <img src="./images/S10.jpeg" alt="Slide 4">
+            <div class="slide-caption">Honoring the Hard Work and Dedication of our Tuition Achievers</div>
+        </div>
+        <div class="slide">
+            <img src="./images/S2.jpeg" alt="Slide 5">
+            <div class="slide-caption">Classes for students provide structured learning environments to acquire knowledge and skills.</div>
+        </div>
+        <div class="slide">
+            <img src="./images/S4.jpeg" alt="Slide 6">
+            <div class="slide-caption">A Memorable Tuition Achievement Trip</div>
+        </div>
+        <div class="slide">
+            <img src="./images/S8.jpeg" alt="Slide 7">
+            <div class="slide-caption">Recognizing the Outstanding Performance of our Tuition Students</div>
+        </div>
+        <div class="slide">
+            <img src="./images/S7.jpeg" alt="Slide 8">
+            <div class="slide-caption">A Rewarding Experience for our Top Tuition Achievers</div>
+        </div>
+        <div class="slide">
+            <img src="./images/S9.jpeg" alt="Slide 9">
+            <div class="slide-caption">Celebrating the Academic Accomplishments of our Tuition Students</div>
+        </div>
+        <div class="slide">
+            <img src="./images/S3.jpeg" alt="Slide 10">
+            <div class="slide-caption">Tuition Achievement Dinner and Trip: Honoring Excellence</div>
+        </div>
+        <div class="slide">
+            <img src="./images/S5.jpeg" alt="Slide 11">
+            <div class="slide-caption">Celebrating the academic accomplishments of our tuition students honors their dedication and achievements.</div>
+        </div>
+        <div class="slide">
+            <img src="./images/S6.jpeg" alt="Slide 12">
+            <div class="slide-caption">A Night to Remember: Tuition Achievement Dinner and Trip</div>
+        </div>
+        <div class="slide">
+            <img src="./images/S13.jpeg" alt="Slide 13">
+            <div class="slide-caption">Conducting tests for students evaluates their understanding and progress in the subject.</div>
+        </div>
+        <!--<div class="slide">
+            <img src="" alt="Slide 14">
+            <div class="slide-caption">Recognizing the Hard Work of our Top Tuition Students</div>
+        </div>
+        <div class="slide">
+            <img src="" alt="Slide 15">
+            <div class="slide-caption">A Celebration of Academic Excellence: Tuition Achievement Dinner and Trip</div>
+        </div>-->
+
+        <button class="prev" onclick="changeSlide(-1)">❮</button>
+        <button class="next" onclick="changeSlide(1)">❯</button>
+
+        <div class="dots-container">
+            <span class="dot active" onclick="goToSlide(0)"></span>
+            <span class="dot" onclick="goToSlide(1)"></span>
+            <span class="dot" onclick="goToSlide(2)"></span>
+            <span class="dot" onclick="goToSlide(3)"></span>
+            <span class="dot" onclick="goToSlide(4)"></span>
+            <span class="dot" onclick="goToSlide(5)"></span>
+            <span class="dot" onclick="goToSlide(6)"></span>
+            <span class="dot" onclick="goToSlide(7)"></span>
+            <span class="dot" onclick="goToSlide(8)"></span>
+            <span class="dot" onclick="goToSlide(9)"></span>
+            <span class="dot" onclick="goToSlide(10)"></span>
+            <span class="dot" onclick="goToSlide(11)"></span>
+            <span class="dot" onclick="goToSlide(12)"></span>
+            <!--<span class="dot" onclick="goToSlide(13)"></span>
+            <span class="dot" onclick="goToSlide(14)"></span>-->
+        </div>
+    </div>
+
+    <div class="controls">
+        <button class="pause-btn" onclick="toggleAutoPlay()">Pause</button>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.getElementsByClassName("slide");
+        const dots = document.getElementsByClassName("dot");
+        const counter = document.querySelector('.slide-counter');
+        const pauseBtn = document.querySelector('.pause-btn');
+        let isAutoPlaying = true;
+        let slideInterval;
+
+        function showSlide(n) {
+            // Reset current slide
+            slides[currentSlide].classList.remove('active');
+            dots[currentSlide].classList.remove('active');
+            
+            // Calculate new slide index
+            currentSlide = (n + slides.length) % slides.length;
+            
+            // Show new slide
+            slides[currentSlide].classList.add('active');
+            dots[currentSlide].classList.add('active');
+            
+            // Update counter
+            counter.textContent = `${currentSlide + 1} / 15`;
+        }
+
+        function changeSlide(direction) {
+            showSlide(currentSlide + direction);
+        }
+
+        function goToSlide(n) {
+            showSlide(n);
+        }
+
+        function startAutoPlay() {
+            slideInterval = setInterval(() => changeSlide(1), 5000);
+        }
+
+        function toggleAutoPlay() {
+            if (isAutoPlaying) {
+                clearInterval(slideInterval);
+                pauseBtn.textContent = 'Play';
+            } else {
+                startAutoPlay();
+                pauseBtn.textContent = 'Pause';
+            }
+            isAutoPlaying = !isAutoPlaying;
+        }
+
+        // Start autoplay
+        startAutoPlay();
+
+        // Add keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+                changeSlide(-1);
+            } else if (e.key === 'ArrowRight') {
+                changeSlide(1);
+            }
+        });
+    </script>
+</body>
+</html>
